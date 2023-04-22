@@ -88,7 +88,8 @@ const currentProductSizes = document.querySelectorAll(".size");
 menuItems.forEach((item,index)=>{
     item.addEventListener("click",()=>{
         //change the current slide
-        wrapper.style.transform = `translateX(${-100*index}vw)`
+        wrapper.style.transform = `translateX(${-100*index}vw)`;
+        
    
    //change the choosen product
    choosenProduct =products[index]
@@ -120,3 +121,19 @@ currentProductSizes.forEach((size,index)=>{
     size.style.color="white";
   });
 });
+
+
+var menuItem = document.querySelectorAll('.menuItem');
+  
+  function toggleSelected() {
+    for (var i = 0; i < menuItem.length; i++) {
+      menuItem[i].classList.remove('selected');
+    }
+    this.classList.add('selected');
+  }
+  
+  for (var i = 0; i < menuItem.length; i++) {
+    menuItem[i].addEventListener('click', toggleSelected);
+  }
+
+
